@@ -18,7 +18,6 @@ First, you must clone our template repository. You can do this by running the fo
 ```bash
 git clone https://github.com/datasys-lab/KTH-ID2203-assignments.git
 ```
-After cloning the repository go to `.devcontainer/Dockerfile` and uncomment one of the *coursier* installations at the bottom of the file depending on which architecture you are running.
 
 Now you should open the project in VSCode. At this moment a notification should appear in the bottom right corner of your screen asking you to reopen the project in a container. Click on the `Reopen in Container` button.
 ![reopen-in-container-vscode](https://github.com/user-attachments/assets/e1762a5b-7366-4e77-aff4-bc3ecb0a5d5f)
