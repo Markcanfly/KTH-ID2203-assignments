@@ -5,7 +5,7 @@
         "vscode": {
             "extensions": [
                 "scala-lang.scala",
-                "formulahendry.terminal"
+                "scalameta.metals"
             ]
         }
     }
