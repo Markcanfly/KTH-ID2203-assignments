@@ -28,7 +28,8 @@ RUN chsh -s /usr/bin/zsh root
 
 ARG TARGETARCH
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
-        curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup -y && rm -f cs; \
+        coursier_url="https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz"; \
     else \
-        curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup -y && rm -f cs; \
-    fi
+        coursier_url="https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-pc-linux.gz"; \
+    fi && \
+    curl -fL ${coursier_url} | gzip -d > cs && chmod +x cs && ./cs setup -y && rm -f cs
