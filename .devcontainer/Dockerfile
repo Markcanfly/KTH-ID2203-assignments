@@ -28,8 +28,11 @@ RUN chsh -s /usr/bin/zsh root
 
 ARG TARGETARCH
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
+        # x64_64
         coursier_url="https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz"; \
     else \
+        # arm64
         coursier_url="https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-pc-linux.gz"; \
     fi && \
+    # install coursier for the appropriate CPU architecture
     curl -fL ${coursier_url} | gzip -d > cs && chmod +x cs && ./cs setup -y && rm -f cs
